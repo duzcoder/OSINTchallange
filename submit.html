@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit Flag</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    /* Background Video Styling */
+    .video-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .video-background video {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      filter: brightness(0.3); /* Low luminosity */
+    }
+
+    /* Full Page  Background */
+    body {
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Input and Button Styling */
+    .input-field, .submit-button {
+      font-size: 1.2em;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .input-field {
+      width: 300px;
+    }
+
+    .submit-button {
+      background-color: #333;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .submit-button:hover {
+      background-color: #555;
+    }
+
+    /* Footer Styling */
+    footer {
+      position: absolute;
+      bottom: 10px;
+      font-size: 0.9em;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <h2>Enter the Flag</h2>
+  <div class="video-background">
+    <video autoplay muted loop>
+      <source src="video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <form onsubmit="return verify()">
+    <input type="text" placeholder="Enter flag here" class="input-field" id="inputf"/>
+    <br>
+    <center><button class="submit-button">Submit Answer</button></center>
+  </form>
+
+  <footer>&copy; duzcoder, 2024</footer>
+
+  <script>
+    function verify(){
+        input = document.getElementById('inputf').value;
+        flag = 'SecurinetsISETZ{pe0ple_di3_but_th31r_f00tpr1nt6_last_f0r3v3r}';
+
+        if(input === flag){
+            alert('Flag is correct!');
+        }
+        else{
+            alert('Flag is incorrect!');
+        }
+    }
+
+  </script>
+</body>
+</html>
